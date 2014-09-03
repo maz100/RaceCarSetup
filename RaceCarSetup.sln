@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceCarSetup", "RaceCarSetu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{86279F35-E8D8-436B-8CA2-61003A295C80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.RaceCarSetup", "Test.RaceCarSetup\Test.RaceCarSetup.csproj", "{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,9 +19,14 @@ Global
 		{864DD64F-3D05-4467-906E-68994D1AF334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{864DD64F-3D05-4467-906E-68994D1AF334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{864DD64F-3D05-4467-906E-68994D1AF334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{864DD64F-3D05-4467-906E-68994D1AF334} = {5B0DEFEC-073E-4AC2-9D45-3D5848C02BBE}
+		{DC8FB6CB-6B6C-46DB-A408-AF4BBFECACE1} = {86279F35-E8D8-436B-8CA2-61003A295C80}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = RaceCarSetup\RaceCarSetup.csproj
