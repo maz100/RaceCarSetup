@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace RaceCarSetup
 {
 	public class RaceTrack
@@ -8,17 +7,17 @@ namespace RaceCarSetup
 		{
 		}
 
-		public int LapDistance {
+		public float LapDistance {
 			get;
 			set;
 		}
 
-		public int TotalLaps {
+		public float TotalLaps {
 			get;
 			set;
 		}
 
-		public TimeSpan PitStopTime {
+		public float PitStopTime {
 			get;
 			set;
 		}

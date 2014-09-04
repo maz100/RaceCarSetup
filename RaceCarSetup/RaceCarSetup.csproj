@@ -33,6 +33,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceTrack.cs" />
     <Compile Include="CarConfiguration.cs" />
+    <Compile Include="IRaceService.cs" />
+    <Compile Include="RaceService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
