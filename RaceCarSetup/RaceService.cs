@@ -21,6 +21,20 @@ namespace RaceCarSetup
 			return result;
 		}
 
+
+		public float GetRemainingFuel (int lap, float fuelConsumptionPerLap, float fuelCapacity)
+		{
+			var result = fuelCapacity - (fuelConsumptionPerLap * lap);
+
+			return result;
+		}
+
+
+		public void MakePitstop (CarConfiguration carConfiguration)
+		{
+			throw new NotImplementedException ();
+		}
+
 		#endregion
 	}
 }

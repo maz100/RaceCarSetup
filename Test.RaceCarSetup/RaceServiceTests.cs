@@ -18,7 +18,7 @@ namespace Test.RaceCarSetup
 
 			raceTrack = new RaceTrack { LapDistance = 57 };
 
-			carConfiguration = new CarConfiguration { AverageSpeed = 213 };
+			carConfiguration = new CarConfiguration (raceTrack){ AverageSpeed = 213 };
 		}
 
 		[Test]
@@ -39,6 +39,20 @@ namespace Test.RaceCarSetup
 			var actualFuelConsumptionPerLap = raceService.GetFuelConsumptionPerLap (carConfiguration.FuelConsumptionPerKm, raceTrack.LapDistance);
 
 			Assert.AreEqual (expectedFuelConsumptionPerLap, actualFuelConsumptionPerLap);
+		}
+
+		[Test]
+		public void TestGetRemainingFuel ()
+		{
+			var lap = 3;
+			var fuelConsumptionPerLap = 0.25F;
+			var fuelCapacity = 100;
+
+			var expectedRemainingFuel = fuelCapacity - (fuelConsumptionPerLap * lap);
+
+			var actualRemainingFuel = raceService.GetRemainingFuel (lap, fuelConsumptionPerLap, fuelCapacity);
+
+			Assert.AreEqual (expectedRemainingFuel, actualRemainingFuel);
 		}
 	}
 }
