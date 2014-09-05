@@ -23,13 +23,10 @@ namespace Test.RaceCarSetup
 		{
 			var carConfigurations = GetCarConfigurations ();
 
-			var expected = carConfigurations.OrderBy (x => x.ElapsedTime).ToArray ();
+			var expected = carConfigurations.OrderBy (x => x.ElapsedTime).Select (x => x.ElapsedTime).ToArray ();
 
-			var actual = _carConfirgurationSorter.Sort (carConfigurations.ToArray (), 0, carConfigurations.Length - 1);
-
-			var expectedElapsedTimes = expected.Select (x => x.ElapsedTime).ToList ();
-
-			var actualElapsedTimes = actual.Select (x => x.ElapsedTime).ToList ();
+			var actual = _carConfirgurationSorter.Sort (carConfigurations.ToArray (), 0, carConfigurations.Length - 1)
+				.Select (x => x.ElapsedTime).ToArray ();
 
 			Assert.True (actual.SequenceEqual (expected));
 		}
@@ -56,10 +53,6 @@ namespace Test.RaceCarSetup
 
 			return carConfiguration;
 		}
-
-		
-
-
 	}
 }
 

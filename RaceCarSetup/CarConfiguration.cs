@@ -1,8 +1,13 @@
 ﻿namespace RaceCarSetup
 {
-	public class CarConfiguration : IRaceable
+	public class CarConfiguration
 	{
 		private RaceTrack _raceTrack;
+
+		public CarConfiguration ()
+		{
+			
+		}
 
 		public CarConfiguration (RaceTrack raceTrack, double fuelCapacity, double averageSpeed, double fuelConsumptionPerKm, int id = 0)
 		{

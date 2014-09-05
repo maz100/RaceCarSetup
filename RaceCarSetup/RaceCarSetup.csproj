@@ -30,11 +30,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceTrack.cs" />
     <Compile Include="CarConfiguration.cs" />
-    <Compile Include="IRaceApplication.cs" />
-    <Compile Include="RaceApplication.cs" />
-    <Compile Include="IRaceable.cs" />
     <Compile Include="ICarConfigurationSorter.cs" />
     <Compile Include="CarConfigurationSorter.cs" />
+    <Compile Include="IRaceManager.cs" />
+    <Compile Include="RaceManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

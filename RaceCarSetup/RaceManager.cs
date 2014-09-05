@@ -1,10 +1,10 @@
 ﻿namespace RaceCarSetup
 {
-	public class RaceApplication : IRaceApplication
+	public class RaceManager : IRaceManager
 	{
 		#region IRaceApplication implementation
 
-		public void Race (RaceTrack raceTrack, params IRaceable[] cars)
+		public void Race (RaceTrack raceTrack, params CarConfiguration[] cars)
 		{
 			for (int i = 0; i < raceTrack.TotalLaps; i++) {
 				foreach (var car in cars) {
