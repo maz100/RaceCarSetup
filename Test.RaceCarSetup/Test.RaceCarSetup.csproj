@@ -34,6 +34,9 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="FizzWare.NBuilder">
+      <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -41,6 +44,7 @@
     <Compile Include="CarConfigurationTests.cs" />
     <Compile Include="RaceApplicationTests.cs" />
     <Compile Include="DiagnosticCarConfiguration.cs" />
+    <Compile Include="CarConfigurationSorterTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -33,6 +33,8 @@
     <Compile Include="IRaceApplication.cs" />
     <Compile Include="RaceApplication.cs" />
     <Compile Include="IRaceable.cs" />
+    <Compile Include="ICarConfigurationSorter.cs" />
+    <Compile Include="CarConfigurationSorter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
