@@ -56,8 +56,10 @@ namespace Test.RaceCarSetup
 		{
 			var raceTrack = new RaceTrack ();
 			raceTrack.LapDistance = 5;
-			raceTrack.PitStopTime = 3;
+			raceTrack.PitStopTime = 3.123;
 			raceTrack.TotalLaps = 10;
+
+			Console.WriteLine (raceTrack);
 
 			_raceApplication.Race (raceTrack, new DiagnosticCarConfiguration (raceTrack,
 				averageSpeed: 100,

@@ -23,39 +23,64 @@
 			private set;
 		}
 
-
+		/// <summary>
+		/// Gets the fuel capacity.
+		/// </summary>
+		/// <value>The fuel capacity in kilograms.</value>
 		public double FuelCapacity {
 			get ;
 			private set;
 		}
 
+		/// <summary>
+		/// Gets the lap time.
+		/// </summary>
+		/// <value>The lap time in milliseconds.</value>
 		public double LapTime {
 			get;
 			private set;
 		}
 
+		/// <summary>
+		/// Gets the average speed.
+		/// </summary>
+		/// <value>The average speed in kilometers per hour.</value>
 		public double AverageSpeed {
 			get;
 			private set;
 		}
 
-
+		/// <summary>
+		/// Gets the fuel consumption per km.
+		/// </summary>
+		/// <value>The fuel consumption per km.</value>
 		public double FuelConsumptionPerKm {
 			get;
 			private set;
 		}
 
-
+		/// <summary>
+		/// Gets the fuel consumption per lap.
+		/// </summary>
+		/// <value>The fuel consumption per lap.</value>
 		public double FuelConsumptionPerLap {
 			get;
 			private set;
 		}
 
+		/// <summary>
+		/// Gets the remaining fuel.
+		/// </summary>
+		/// <value>The remaining fuel in kilograms.</value>
 		public double RemainingFuel {
 			get ;
 			private set;
 		}
 
+		/// <summary>
+		/// Gets the elapsed time.
+		/// </summary>
+		/// <value>The elapsed time in milliseconds.</value>
 		public double ElapsedTime {
 			get;
 			private set;
