@@ -1,6 +1,6 @@
 ﻿namespace RaceCarSetup
 {
-	public class CarConfiguration
+	public class CarConfiguration : IRaceable
 	{
 		private RaceTrack _raceTrack;
 		private float? lapTime;
@@ -46,6 +46,26 @@
 				return remainingFuel;
 			}
 		}
+
+		#region IRaceable implementation
+
+		public void CompleteLap ()
+		{
+			remainingFuel -= FuelConsumptionPerLap.Value;
+		}
+
+		public void MakePitstop ()
+		{
+			remainingFuel = FuelCapacity;
+		}
+
+		public bool HasSufficientFuel {
+			get {
+				return remainingFuel - FuelConsumptionPerLap > 0;
+			}
+		}
+
+		#endregion
 	}
 }
 
