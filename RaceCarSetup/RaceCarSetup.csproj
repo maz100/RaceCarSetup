@@ -34,7 +34,6 @@
     <Compile Include="RaceService.cs" />
     <Compile Include="IRaceApplication.cs" />
     <Compile Include="RaceApplication.cs" />
-    <Compile Include="RaceResults.cs" />
     <Compile Include="IRaceable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

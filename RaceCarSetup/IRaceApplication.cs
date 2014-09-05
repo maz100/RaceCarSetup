@@ -2,7 +2,7 @@
 {
 	public interface IRaceApplication
 	{
-		RaceResults Race (RaceTrack raceTrack, CarConfiguration[] cars);
+		void Race (RaceTrack raceTrack, IRaceable[] cars);
 	}
 }
 

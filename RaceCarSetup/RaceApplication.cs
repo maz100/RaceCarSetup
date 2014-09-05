@@ -15,9 +15,17 @@
 
 		#region IRaceApplication implementation
 
-		public RaceResults Race (RaceTrack raceTrack, CarConfiguration[] cars)
+		public void Race (RaceTrack raceTrack, params IRaceable[] cars)
 		{
-			return null;
+			for (int i = 0; i < raceTrack.TotalLaps; i++) {
+				foreach (var car in cars) {
+					if (!car.HasSufficientFuel) {
+						car.MakePitstop ();
+					}
+					car.CompleteLap ();
+				}	
+			}
+
 		}
 
 		#endregion

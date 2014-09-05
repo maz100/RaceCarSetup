@@ -11,7 +11,7 @@
 			set;
 		}
 
-		public float TotalLaps {
+		public int TotalLaps {
 			get;
 			set;
 		}

@@ -40,6 +40,7 @@
     <Compile Include="RaceCarSetupTests.cs" />
     <Compile Include="RaceServiceTests.cs" />
     <Compile Include="CarConfigurationTests.cs" />
+    <Compile Include="RaceApplicationTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
