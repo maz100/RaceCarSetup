@@ -50,6 +50,21 @@ namespace Test.RaceCarSetup
 			_raceable.Verify (x => x.MakePitstop (), Times.Once);
 			_raceable.Verify (x => x.CompleteLap (), Times.Exactly (_raceTrack.TotalLaps));
 		}
+
+		[Test]
+		public void TestRace_show_diagnostic_messages_on_console ()
+		{
+			var raceTrack = new RaceTrack ();
+			raceTrack.LapDistance = 5;
+			raceTrack.PitStopTime = 3;
+			raceTrack.TotalLaps = 10;
+
+			_raceApplication.Race (raceTrack, new DiagnosticCarConfiguration (raceTrack,
+				averageSpeed: 100,
+				fuelCapacity: 10,
+				fuelConsumptionPerKm: 0.25F,
+				id: 1));
+		}
 	}
 }
 

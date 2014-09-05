@@ -9,26 +9,28 @@ namespace Test.RaceCarSetup
 	{
 		private CarConfiguration carConfiguration;
 		private RaceTrack raceTrack;
+		private const double AVERAGE_SPEED = 213;
+		private const double FUEL_CONSUMPTION_PER_KM = 0.25;
+		private const double FUEL_CAPACITY = 100;
 
 		[SetUp]
 		public void SetUp ()
 		{
-			raceTrack = new RaceTrack { LapDistance = 57, PitStopTime = 3 };
+			raceTrack = new RaceTrack { LapDistance = 5, PitStopTime = 3 };
 
-			carConfiguration = new CarConfiguration (raceTrack) {
-				AverageSpeed = 213,
-				FuelConsumptionPerKm = 0.25F,
-				FuelCapacity = 100F
-			};
+			carConfiguration = new CarConfiguration (raceTrack,
+				FUEL_CAPACITY,
+				AVERAGE_SPEED,
+				FUEL_CONSUMPTION_PER_KM);
 		}
 
 
 		[Test]
 		public void TestGetLapTIme ()
 		{
-			var expectedLapTime = raceTrack.LapDistance / carConfiguration.AverageSpeed;
+			var expectedLapTime = TimeSpan.FromMilliseconds ((raceTrack.LapDistance / AVERAGE_SPEED) * 3600000);
 
-			var actualLapTime = carConfiguration.LapTime;
+			var actualLapTime = TimeSpan.FromMilliseconds (carConfiguration.LapTime);
 
 			Assert.AreEqual (expectedLapTime, actualLapTime);
 		}
@@ -36,7 +38,7 @@ namespace Test.RaceCarSetup
 		[Test]
 		public void TestGetFuelConsumptionPerLap ()
 		{
-			var expectedFuelConsumptionPerLap = raceTrack.LapDistance * carConfiguration.FuelConsumptionPerKm;
+			var expectedFuelConsumptionPerLap = raceTrack.LapDistance * FUEL_CONSUMPTION_PER_KM;
 
 			var actualFuelConsumptionPerLap = carConfiguration.FuelConsumptionPerLap;
 
@@ -72,11 +74,10 @@ namespace Test.RaceCarSetup
 			//the racetrack lap distance is greater than 1km
 			//so the car config should know that it does not have sufficient
 			//fuel to complete a lap
-			var carConfiguration2 = new CarConfiguration (raceTrack) {
-				AverageSpeed = 200,
-				FuelCapacity = 10,
-				FuelConsumptionPerKm = 10
-			};
+			var carConfiguration2 = new CarConfiguration (raceTrack,
+				                        FUEL_CAPACITY,
+				                        averageSpeed: 200,
+				                        fuelConsumptionPerKm: FUEL_CAPACITY);
 
 			Assert.False (carConfiguration2.HasSufficientFuel);
 		}
@@ -106,12 +107,14 @@ namespace Test.RaceCarSetup
 		[Test]
 		public void TestMakePitstop_increases_elapsed_time_by_pitstop_time ()
 		{
+			var expected = TimeSpan.FromSeconds (raceTrack.PitStopTime);
+
 			carConfiguration.MakePitstop ();
 
-			Assert.True (carConfiguration.ElapsedTime == raceTrack.PitStopTime);
+			var actual = TimeSpan.FromMilliseconds (carConfiguration.ElapsedTime);
 
+			Assert.AreEqual (expected, actual);
 		}
-
 	}
 }
 

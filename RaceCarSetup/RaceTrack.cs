@@ -6,7 +6,7 @@
 		{
 		}
 
-		public float LapDistance {
+		public int LapDistance {
 			get;
 			set;
 		}
@@ -16,7 +16,7 @@
 			set;
 		}
 
-		public float PitStopTime {
+		public int PitStopTime {
 			get;
 			set;
 		}

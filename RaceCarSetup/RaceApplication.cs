@@ -25,7 +25,6 @@
 					car.CompleteLap ();
 				}	
 			}
-
 		}
 
 		#endregion
