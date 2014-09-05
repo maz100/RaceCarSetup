@@ -13,7 +13,7 @@ namespace Test.RaceCarSetup
 		[SetUp]
 		public void SetUp ()
 		{
-			raceTrack = new RaceTrack { LapDistance = 57 };
+			raceTrack = new RaceTrack { LapDistance = 57, PitStopTime = 3 };
 
 			carConfiguration = new CarConfiguration (raceTrack) {
 				AverageSpeed = 213,
@@ -93,6 +93,23 @@ namespace Test.RaceCarSetup
 			var refuelsSuccessfullyAtPitstop = carConfiguration.RemainingFuel == carConfiguration.FuelCapacity;
 
 			Assert.True (startsWithFullTank && usesFuelToCompleteTank && refuelsSuccessfullyAtPitstop);
+		}
+
+		[Test]
+		public void TestCompleteLap_increments_elapsed_time_by_lap_time ()
+		{
+			carConfiguration.CompleteLap ();
+
+			Assert.True (carConfiguration.ElapsedTime == carConfiguration.LapTime);
+		}
+
+		[Test]
+		public void TestMakePitstop_increases_elapsed_time_by_pitstop_time ()
+		{
+			carConfiguration.MakePitstop ();
+
+			Assert.True (carConfiguration.ElapsedTime == raceTrack.PitStopTime);
+
 		}
 
 	}

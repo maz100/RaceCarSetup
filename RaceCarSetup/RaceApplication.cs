@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RaceCarSetup
+﻿namespace RaceCarSetup
 {
 	public class RaceApplication : IRaceApplication
 	{
@@ -19,7 +17,7 @@ namespace RaceCarSetup
 
 		public RaceResults Race (RaceTrack raceTrack, CarConfiguration[] cars)
 		{
-			throw new NotImplementedException ();
+			return null;
 		}
 
 		#endregion

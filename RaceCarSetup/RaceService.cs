@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RaceCarSetup
+﻿namespace RaceCarSetup
 {
 	public class RaceService : IRaceService
 	{
@@ -32,7 +30,7 @@ namespace RaceCarSetup
 
 		public void MakePitstop (CarConfiguration carConfiguration)
 		{
-			throw new NotImplementedException ();
+
 		}
 
 		#endregion

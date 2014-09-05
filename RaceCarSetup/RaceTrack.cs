@@ -1,5 +1,4 @@
-﻿
-namespace RaceCarSetup
+﻿namespace RaceCarSetup
 {
 	public class RaceTrack
 	{

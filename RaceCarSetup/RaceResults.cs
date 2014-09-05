@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RaceCarSetup
+﻿namespace RaceCarSetup
 {
 	public class RaceResults
 	{

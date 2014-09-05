@@ -47,16 +47,23 @@
 			}
 		}
 
+		public float ElapsedTime {
+			get;
+			private set;
+		}
+
 		#region IRaceable implementation
 
 		public void CompleteLap ()
 		{
 			remainingFuel -= FuelConsumptionPerLap.Value;
+			ElapsedTime += LapTime.Value;
 		}
 
 		public void MakePitstop ()
 		{
 			remainingFuel = FuelCapacity;
+			ElapsedTime += _raceTrack.PitStopTime;
 		}
 
 		public bool HasSufficientFuel {
