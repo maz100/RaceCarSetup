@@ -9,20 +9,30 @@ namespace Test.RaceCarSetup
 	public class RaceManagerTests
 	{
 		private RaceManager _raceManager;
+		private MockRepository _mocks;
 		private Mock<CarConfiguration> _carConfiguration;
+		private Mock<ICarConfigurationSorter> _carConfigurationSorter;
 		private RaceTrack _raceTrack;
+		private CarConfiguration[] _rankedCarConfigurations;
 
 		[SetUp]
 		public void SetUp ()
 		{
-			_raceManager = new RaceManager ();
+			_mocks = new MockRepository (MockBehavior.Default);
+			_carConfiguration = _mocks.Create<CarConfiguration> ();
+			_carConfigurationSorter = _mocks.Create<ICarConfigurationSorter> ();
 
-			_carConfiguration = new Mock<CarConfiguration> ();
+			_raceManager = new RaceManager (_carConfigurationSorter.Object);
 
 			_raceTrack = new RaceTrack ();
 			_raceTrack.LapDistance = 5;
 			_raceTrack.PitStopTime = 3;
 			_raceTrack.TotalLaps = 2;
+
+			//return value for car config sorter - we don't care about the actual values, its just a reference!
+			_rankedCarConfigurations = new CarConfiguration[]{ new CarConfiguration () };
+
+			_carConfigurationSorter.Setup (x => x.Sort (It.IsAny<CarConfiguration[]> (), 0, It.IsAny<int> ())).Returns (_rankedCarConfigurations);
 		}
 
 		[Test]
@@ -35,6 +45,8 @@ namespace Test.RaceCarSetup
 
 			_carConfiguration.Verify (x => x.HasSufficientFuel, Times.Exactly (_raceTrack.TotalLaps));
 			_carConfiguration.Verify (x => x.CompleteLap (), Times.Exactly (_raceTrack.TotalLaps));
+
+			_mocks.VerifyAll ();
 		}
 
 		[Test]
@@ -66,6 +78,16 @@ namespace Test.RaceCarSetup
 				fuelCapacity: 10,
 				fuelConsumptionPerKm: 0.25F,
 				id: 1));
+		}
+
+		[Test]
+		public void TestRace_returns_sorted_car_configurations ()
+		{
+			var result = _raceManager.Race (_raceTrack, TestData.GetCarConfigurations ());
+
+			Assert.AreEqual (_rankedCarConfigurations, result);
+
+			_mocks.VerifyAll ();
 		}
 	}
 }

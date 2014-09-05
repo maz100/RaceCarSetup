@@ -40,11 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaceCarSetupTests.cs" />
     <Compile Include="CarConfigurationTests.cs" />
     <Compile Include="DiagnosticCarConfiguration.cs" />
     <Compile Include="CarConfigurationSorterTests.cs" />
     <Compile Include="RaceManagerTests.cs" />
+    <Compile Include="TestData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -21,7 +21,7 @@ namespace Test.RaceCarSetup
 		[Test]
 		public void TestSort_sorts_array_by_elapsed_time ()
 		{
-			var carConfigurations = GetCarConfigurations ();
+			var carConfigurations = TestData.GetCarConfigurations ();
 
 			var expected = carConfigurations.OrderBy (x => x.ElapsedTime).Select (x => x.ElapsedTime).ToArray ();
 
@@ -29,29 +29,6 @@ namespace Test.RaceCarSetup
 				.Select (x => x.ElapsedTime).ToArray ();
 
 			Assert.True (actual.SequenceEqual (expected));
-		}
-
-		private CarConfiguration[] GetCarConfigurations ()
-		{
-			var carConfigurations = new List<CarConfiguration> ();
-
-			var random = new Random ();
-
-			for (int i = 0; i < 10; i++) {
-				carConfigurations.Add (GetCarConfiguration (random));
-			}
-
-			return carConfigurations.ToArray ();
-		}
-
-		private CarConfiguration GetCarConfiguration (Random random)
-		{
-			var raceTrack = Builder<RaceTrack>.CreateNew ().Build ();
-			var carConfiguration = new CarConfiguration (raceTrack, random.NextDouble (), random.NextDouble (), random.Next ());
-
-			carConfiguration.CompleteLap ();
-
-			return carConfiguration;
 		}
 	}
 }
