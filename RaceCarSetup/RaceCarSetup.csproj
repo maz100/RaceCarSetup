@@ -30,7 +30,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceTrack.cs" />
     <Compile Include="CarConfiguration.cs" />
-    <Compile Include="IRaceService.cs" />
     <Compile Include="IRaceApplication.cs" />
     <Compile Include="RaceApplication.cs" />
     <Compile Include="IRaceable.cs" />

@@ -2,17 +2,6 @@
 {
 	public class RaceApplication : IRaceApplication
 	{
-		private IRaceService _raceService;
-
-		public RaceApplication ()
-		{
-		}
-
-		public RaceApplication (IRaceService raceService)
-		{
-			_raceService = raceService;	
-		}
-
 		#region IRaceApplication implementation
 
 		public void Race (RaceTrack raceTrack, params IRaceable[] cars)
