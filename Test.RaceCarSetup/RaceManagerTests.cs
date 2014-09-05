@@ -2,6 +2,7 @@
 using RaceCarSetup;
 using NUnit.Framework;
 using Moq;
+using FizzWare.NBuilder;
 
 namespace Test.RaceCarSetup
 {
@@ -88,6 +89,23 @@ namespace Test.RaceCarSetup
 			Assert.AreEqual (_rankedCarConfigurations, result);
 
 			_mocks.VerifyAll ();
+		}
+
+		[Test]
+		public void TestRace_inject_real_implementation_log_results_to_console ()
+		{
+			//designed for manual testing - examine details logged to console
+			var raceManager = new RaceManager (new CarConfigurationSorter ());
+
+			var raceTrack = TestData.GetRaceTrack ();
+
+			var rankedCarConfigurations = raceManager.Race (raceTrack, TestData.GetCarConfigurations2 (raceTrack));
+
+			for (int i = 0; i < rankedCarConfigurations.Length; i++) {
+				var car = rankedCarConfigurations [i];
+				var raceCompletionTime = TimeSpan.FromMilliseconds (car.ElapsedTime);
+				Console.WriteLine (string.Format ("Rank={0}, CarConfig Id={1}, Race Completion Time={2:g}", i + 1, car.Id, raceCompletionTime)); 
+			}
 		}
 	}
 }

@@ -9,8 +9,8 @@
 		/// <summary>
 		/// Gets or sets the lap distance.
 		/// </summary>
-		/// <value>The lap distance.</value>
-		public int LapDistance {
+		/// <value>The lap distance in kilometers.</value>
+		public double LapDistance {
 			get;
 			set;
 		}
