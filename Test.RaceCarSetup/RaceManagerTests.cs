@@ -33,7 +33,7 @@ namespace Test.RaceCarSetup
 			//return value for car config sorter - we don't care about the actual values, its just a reference!
 			_rankedCarConfigurations = new CarConfiguration[]{ new CarConfiguration () };
 
-			_carConfigurationSorter.Setup (x => x.Sort (It.IsAny<CarConfiguration[]> (), 0, It.IsAny<int> ())).Returns (_rankedCarConfigurations);
+			_carConfigurationSorter.Setup (x => x.Sort (It.IsAny<CarConfiguration[]> ())).Returns (_rankedCarConfigurations);
 		}
 
 		[Test]

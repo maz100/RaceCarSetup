@@ -24,7 +24,7 @@
 				}	
 			}
 
-			var result = _carConfigurationSorter.Sort (carsCopy, 0, cars.Length - 1);
+			var result = _carConfigurationSorter.Sort (carsCopy);
 
 			return result;
 		}
@@ -32,4 +32,3 @@
 		#endregion
 	}
 }
-

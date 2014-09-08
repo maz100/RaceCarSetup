@@ -16,7 +16,7 @@
 		{
 			//interface defines sort method which does not expose details about the sort algorithm used
 			//i.e. that quicksort needs left/right.  Makes it easy to change algorithm.
-			return Sort (cars, 0, cars.Length);
+			return Sort (cars, 0, cars.Length - 1);
 		}
 
 		#endregion
