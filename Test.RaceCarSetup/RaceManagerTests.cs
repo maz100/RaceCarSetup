@@ -2,7 +2,6 @@
 using RaceCarSetup;
 using NUnit.Framework;
 using Moq;
-using FizzWare.NBuilder;
 
 namespace Test.RaceCarSetup
 {
