@@ -3,6 +3,9 @@ using RaceCarSetup;
 
 namespace Test.RaceCarSetup
 {
+	/// <summary>
+	/// Diagnostic car configuration. Adds logging to base class for testing.
+	/// </summary>
 	public class DiagnosticCarConfiguration : CarConfiguration
 	{
 		public DiagnosticCarConfiguration (RaceTrack raceTrack, double fuelCapacity, double averageSpeed, double fuelConsumptionPerKm, int id = 0) : base (raceTrack, fuelCapacity, averageSpeed, fuelConsumptionPerKm, id)
@@ -12,13 +15,13 @@ namespace Test.RaceCarSetup
 
 		public override void CompleteLap ()
 		{
-			Console.WriteLine ("CompleteLap: " + ToString ());
+			Console.WriteLine ("CompleteLap: {0}", ToString ());
 			base.CompleteLap ();
 		}
 
 		public override void MakePitstop ()
 		{
-			Console.WriteLine ("MakePitstop: " + ToString ());
+			Console.WriteLine ("MakePitstop: {0}", ToString ());
 			base.MakePitstop ();
 		}
 

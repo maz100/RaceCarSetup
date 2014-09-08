@@ -104,7 +104,7 @@ namespace Test.RaceCarSetup
 			for (int i = 0; i < rankedCarConfigurations.Length; i++) {
 				var car = rankedCarConfigurations [i];
 				var raceCompletionTime = TimeSpan.FromMilliseconds (car.ElapsedTime);
-				Console.WriteLine (string.Format ("Rank={0}, CarConfig Id={1}, Race Completion Time={2:g}", i + 1, car.Id, raceCompletionTime)); 
+				Console.WriteLine ("Rank={0}, CarConfig Id={1}, Race Completion Time={2:g}", i + 1, car.Id, raceCompletionTime); 
 			}
 		}
 	}
